@@ -2,7 +2,7 @@ cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
   nextDate = new Date()
-  nextDate.setDate(nextDay.getDate() + Number(7))
+  nextDate.setDate(nextDate.getDate() + Number(7))
 
   month = nextDate.getMonth() + 1
   date = nextDate.getDate()
