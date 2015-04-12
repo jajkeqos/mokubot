@@ -31,5 +31,5 @@ module.exports = (robot) ->
         msg.send process.env.HUBOT_TIQAV_ERROR_MESSAGE or "エラーっぽい"
       else
         images = JSON.parse body
-        image = msg.random images
+        image =  images[0]
         msg.send "http://img.tiqav.com/#{image.id}.#{image.ext}"
