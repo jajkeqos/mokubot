@@ -5,7 +5,7 @@
 #   Nothing
 #
 # Commands:
-#   mokubot /(hi|hello|やっほ|ヤッホ)/- なにかしらを返す
+#   mokubot /(hi|hello|やっほ|ヤッホ)/ - なにかしらを返す
 #
 # Notes:
 #   Nothing
