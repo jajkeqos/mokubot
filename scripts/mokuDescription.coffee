@@ -1,8 +1,9 @@
 cronJob = require('cron').CronJob
 
 module.exports = (robot) ->
+  # TODO: 第n回を 自動で挿入する
   text = '''
-第n回 もくもく会 21-23時
+第3回 もくもく会 21-23時
 
 途中参加（抜け）OK
 1.Slackにログインする
