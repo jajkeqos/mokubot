@@ -13,6 +13,9 @@
 #   moqada
 
 module.exports = (robot) ->
+  random = (start, end) ->
+    start + Math.floor(Math.random()*(end - start + 1))
+
   robot.respond /tiqav( (.*))?/i, (msg) ->
     query = msg.match[2]
     if query
@@ -26,10 +29,10 @@ module.exports = (robot) ->
       http = http.query query
     http.get() (err, res, body) ->
       if res.statusCode is 404
-        msg.send process.env.HUBOT_TIQAV_404_MESSAGE or "画像ない"
+        msg.send process.env.HUBOT_TIQAV_404_MESSAGE or "画像がないみたいです…"
       else if res.statusCode isnt 200
-        msg.send process.env.HUBOT_TIQAV_ERROR_MESSAGE or "エラーっぽい"
+        msg.send process.env.HUBOT_TIQAV_ERROR_MESSAGE or "どうやらエラーみたいです…"
       else
         images = JSON.parse body
-        image =  images[0]
+        image =  images[random(0,2)]
         msg.send "http://img.tiqav.com/#{image.id}.#{image.ext}"
