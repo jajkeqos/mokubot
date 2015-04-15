@@ -19,7 +19,7 @@ module.exports = (robot) ->
       msg.reply "クエリを指定してね！"
 
   getImage = (msg, url, query)->
-    url = url + query + "&format=json&count=3"
+    url = url + query + "&format=json&count=5"
     http = msg.http url
     http.get() (err, res, body) ->
       if res.statusCode is 404
